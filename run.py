@@ -1,7 +1,7 @@
 from random import randint
 
 
-class Board:
+class Game:
     def __init__(self, cols, rows):
         self.board = [['#'] * rows for _ in range(cols)]
 
@@ -10,12 +10,11 @@ class Board:
             print(" ".join(i))
         
 
-board_a = Board(14, 14)
-board_b = Board(18, 18)
-board_c = Board(22, 22)
+
+board_a = Game(14, 14)
 
 def random_number():
-    random = randint(0, len(board_c.board))
+    random = randint(0, len(board_a.board))
     return random
 
 class Battleship:
@@ -23,7 +22,7 @@ class Battleship:
         self.length = None
         
 
-    def render(self, board : Board):
+    def render(self, board : Game):
         pass
         
         
@@ -45,5 +44,5 @@ class shipB(Battleship):
         print("Bbbbb")
 
 if __name__ == '__main__':
-    print(board_c.print_board())
+    board_a.print_board()
     print(random_number())
