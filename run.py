@@ -8,21 +8,31 @@ class Game:
     def print_board(self):
         for i in self.board:
             print(" ".join(i))
+    
+    def random_number(self):
+        return randint(0, len(self.board)-1)
         
-
 
 board_a = Game(14, 14)
 
-def random_number():
-    random = randint(0, len(board_a.board))
-    return random
+
 
 class Battleship:
     def __init__(self):
         self.length = None
+       
+    def collision_check(self, game : Game):
+        random_place = game.random_number()
+        print(random_place)
+        row = game.board[random_place]
+        print(row)
+        column = row[random_place]
+        print(column)
         
 
-    def render(self, board : Game):
+    def render(self, game : Game):
+        
+
         pass
         
         
@@ -43,6 +53,8 @@ class shipB(Battleship):
     def render(self):
         print("Bbbbb")
 
+
 if __name__ == '__main__':
     board_a.print_board()
-    print(random_number())
+    the_ship = Battleship()
+    the_ship.collision_check(board_a)
