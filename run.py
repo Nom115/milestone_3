@@ -69,8 +69,8 @@ def village():
     return p_chosen
 
 
-# Item generator
-def item_generator():
+# Weapon generator
+def weapon_generator():
     prefix = {
         1: "Nemesis",
         2: "Emberling",
