@@ -28,6 +28,7 @@ class Player:
         self.fur = p_fur[get_player_fur]
 
 
+# Function to allow player to chose the direction.
 def get_player_direction():
     direction = {
         "A": "The armoury",
@@ -48,6 +49,7 @@ def get_player_direction():
     return p_chosen_direction
 
 
+# The main hub, the village, this function is for the player to get around.
 def village():
     print("You walk into a village close to the castle in the dead of night.")
     time.sleep(1)
@@ -65,6 +67,22 @@ def village():
     time.sleep(2)
     p_chosen = get_player_direction()
     return p_chosen
+
+
+# Item generator
+def item_generator():
+    prefix = {
+        1: "Nemesis",
+        2: "Emberling",
+        3: "Soulflare",
+        4: "Lament",
+        5: "Dusksong",
+        6: "Dreamshadow",
+        7: "Flameward",
+        8: "Crucifier",
+        9: "Torrent",
+        10: "Starlight",
+    }
 
 
 # Begin the adventure
