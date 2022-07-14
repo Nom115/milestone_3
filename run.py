@@ -27,6 +27,25 @@ class Player:
         self.fur = p_fur[get_player_fur]
 
 
+def get_player_direction():
+    direction = {
+        "A": "The armoury",
+        "B": "The tavern",
+        "C": "The dungeon",
+        "D": "The Castle",
+    }
+    player_direction = input(
+        "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
+    ).upper()
+    while player_direction not in "ABCD":
+        print("Not a valid choice, please select a correct option")
+        player_direction = input(
+            "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
+        ).upper()
+    p_chosen_direction = direction[player_direction]
+    return p_chosen_direction
+
+
 def village():
     print("You walk into a village close to the castle in the dead of night.")
     time.sleep(1)
@@ -35,16 +54,14 @@ def village():
     print("To the North there is a tavern with many revellers and patrons.")
     time.sleep(1)
     print(
-        "To the East there is a sign, with many warning written in blood. The sign says, 'BEWARE\n The Dungeon of Neverending Torment\n This way'"
+        "To the East there is a sign, with many warning written in blood. The sign says,\n 'BEWARE\n The Dungeon of Neverending Torment\n This way'"
     )
-    time.sleep(1)
+    time.sleep(4)
     print(
         "The castle is not too far from here, if you wanted to, you could head there now."
     )
-    time.sleep(1)
-    player_direction = input(
-        "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle"
-    )
+    time.sleep(2)
+    p_chosen = get_player_direction()
 
 
 # Begin the adventure
