@@ -123,20 +123,31 @@ def RunGame():
     )
 
     def the_armoury():
+        print("Welcome to the armoury")
+        stay = int(input("Would you like to browse my wares? 1) Yes, 2) No\n"))
         wares = []
-        print("Welcome to the armoury\nplease, browse my wares")
         for i in range(3):
             wares.append(weapon_generator())
-        purchase = input(
-            f"Which would you like, 1) {wares[0]}, 2) {wares[1]}, 3) {wares[2]}?\n"
-        )
-        if purchase == 1:
-            player.inventory.append(wares[0])
-        elif purchase == 2:
-            player.inventory.append(wares[1])
-        elif purchase == 3:
-            player.inventory.append(wares[2])
-        print(player.inventory)
+        while stay == 1:
+
+            purchase = int(
+                input(
+                    f"Which would you like, 1) {wares[0]}, 2) {wares[1]}, 3) {wares[2]}, 4) Nothing?\n"
+                )
+            )
+            if purchase == 1:
+                player.inventory.append(wares[0])
+                wares[0] = "Sold Out"
+            elif purchase == 2:
+                player.inventory.append(wares[1])
+                wares[1] = "Sold Out"
+            elif purchase == 3:
+                player.inventory.append(wares[2])
+                wares[2] = "Sold Out"
+            elif purchase == 4:
+                pass
+            print(player.inventory)
+            stay = int(input("Would you like to buy anything else? 1) Yes, 2) No\n"))
 
     def the_tavern():
         pass
