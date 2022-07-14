@@ -9,9 +9,10 @@ class Player:
 
 def RunGame():
     player = Player(100, 10, ["Sword of Destruction",])
-
-    print(player.health)
-    print(player.inventory)
+    while player.health > 0:
+        print(player.health)
+        print(player.inventory)
+        player.health = player.health - random.randint(0,100)
 
 
 if __name__ == "__main__":
