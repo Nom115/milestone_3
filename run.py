@@ -1,6 +1,6 @@
 import random
 
-
+# Player Class
 class Player:
     def __init__(self, health, stamina, inventory, fur):
         self.health = health
@@ -8,6 +8,7 @@ class Player:
         self.inventory = inventory
         self.fur = fur
 
+    # Method to allow player to customize fur
     def get_player_fur(self):
         p_fur = {
             "A": "Brown",
@@ -25,6 +26,7 @@ class Player:
         self.fur = p_fur[get_player_fur]
 
 
+# Begin the adventure
 def RunGame():
     player = Player(
         100,
