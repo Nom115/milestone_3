@@ -9,10 +9,13 @@ class Player:
 
 def RunGame():
     player = Player(100, 10, ["Sword of Destruction",])
+    print("You are a prince, whose castle who has been taken over by the most evil, powerful cat-zard, Cattledoore. Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'.")
+    
+    
     while player.health > 0:
         print(player.health)
-        print(player.inventory)
-        player.health = player.health - random.randint(0,100)
+        
+    print("")
 
 
 if __name__ == "__main__":
