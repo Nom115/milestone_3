@@ -105,6 +105,12 @@ def weapon_generator():
         10: "of horrors",
     }
 
+    prefix_choice = random.randint(1, 10)
+    type_choice = random.randint(1, 5)
+    suffix_choice = random.randint(1, 10)
+    weapon = f"{prefix[prefix_choice]}, {type[type_choice]} {suffix[suffix_choice]}"
+    return weapon
+
 
 # Begin the adventure
 def RunGame():
@@ -128,6 +134,8 @@ def RunGame():
     def the_castle():
         print("You walk into the castle")
         player.health = 0
+
+    print(weapon_generator())
 
     player.get_player_fur()
     print(player.fur)
