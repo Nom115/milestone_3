@@ -92,6 +92,19 @@ def weapon_generator():
         5: "Staff",
     }
 
+    suffix = {
+        1: "of the shadows",
+        2: "of honor",
+        3: "of the immortal",
+        4: "of the depth",
+        5: "of fury",
+        6: "of the sun",
+        7: "of the claw",
+        8: "of the enigma",
+        9: "of grace",
+        10: "of horrors",
+    }
+
 
 # Begin the adventure
 def RunGame():
