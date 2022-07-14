@@ -62,6 +62,11 @@ def village():
     )
     time.sleep(2)
     p_chosen = get_player_direction()
+    return p_chosen
+
+
+def the_armoury():
+    pass
 
 
 # Begin the adventure
@@ -79,7 +84,11 @@ def RunGame():
         f"You are a prince, with {player.fur} fur, whose castle who has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
     )
     time.sleep(10)
-    village()
+    village_choice = village()
+
+    if village_choice == "The armoury":
+        the_armoury()
+
     while player.health > 0:
         print(player.health)
         player.health = player.health - random.randint(99, 100)
