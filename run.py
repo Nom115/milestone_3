@@ -3,11 +3,12 @@ import time
 
 # Player Class
 class Player:
-    def __init__(self, health, stamina, inventory, fur):
+    def __init__(self, health, stamina, inventory, fur, party):
         self.health = health
         self.stamina = stamina
         self.inventory = inventory
         self.fur = fur
+        self.party = party
 
     # Method to allow player to customize fur
     def get_player_fur(self):
@@ -32,7 +33,7 @@ def get_player_direction():
         "A": "The armoury",
         "B": "The tavern",
         "C": "The dungeon",
-        "D": "The Castle",
+        "D": "The castle",
     }
     player_direction = input(
         "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
@@ -43,6 +44,7 @@ def get_player_direction():
             "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
         ).upper()
     p_chosen_direction = direction[player_direction]
+
     return p_chosen_direction
 
 
@@ -65,22 +67,6 @@ def village():
     return p_chosen
 
 
-def the_armoury():
-    pass
-
-
-def the_tavern():
-    pass
-
-
-def the_dungeon():
-    pass
-
-
-def the_castle():
-    pass
-
-
 # Begin the adventure
 def RunGame():
     player = Player(
@@ -88,14 +74,30 @@ def RunGame():
         10,
         [],
         "Placeholder",
+        [],
     )
+
+    def the_armoury():
+        pass
+
+    def the_tavern():
+        pass
+
+    def the_dungeon():
+        pass
+
+    def the_castle():
+        print("You walk into the castle")
+        player.health = 0
+
     player.get_player_fur()
     print(player.fur)
     time.sleep(1)
+    print(player.inventory)
     print(
         f"You are a prince, with {player.fur} fur, whose castle who has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
     )
-    time.sleep(10)
+    time.sleep(0)
 
     while player.health > 0:
         village_choice = village()
@@ -109,8 +111,8 @@ def RunGame():
             the_castle()
 
         print(player.health)
-        player.health = player.health - random.randint(99, 100)
-    print("")
+
+    print("You Died")
 
 
 if __name__ == "__main__":
