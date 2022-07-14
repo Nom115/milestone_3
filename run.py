@@ -84,6 +84,14 @@ def weapon_generator():
         10: "Starlight",
     }
 
+    type = {
+        1: "Sword",
+        2: "Axe",
+        3: "Hammer",
+        4: "Dagger",
+        5: "Staff",
+    }
+
 
 # Begin the adventure
 def RunGame():
