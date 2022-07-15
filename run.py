@@ -153,7 +153,11 @@ def RunGame():
         pass
 
     def the_dungeon():
-        pass
+        level = 0
+        print("You walk into the dungeon")
+        enemy_health = 100
+        while enemy_health > 0:
+            pass
 
     def the_castle():
         print("You walk into the castle")
