@@ -135,7 +135,9 @@ def rungame():
         "Placeholder",
         [],
     )
-
+    print("Welcome to DUNGEONS AND KITTENS")
+    time.sleep(4)
+    input("press enter to start:")
     def the_armoury():
         print("Welcome to the armoury")
         stay = int(input("Would you like to browse my wares? 1) Yes, 2) No\n"))
@@ -249,7 +251,7 @@ def rungame():
     player.get_player_fur()
     time.sleep(1)
     print(
-        f"You are a prince, with {player.fur} fur, whose castle has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
+        f"You are a prince, with {player.fur} fur, whose castle has been taken over by the most evil, powerful cat-zard, Cattledoore.\nNow, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
     )
     time.sleep(6)
 
