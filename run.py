@@ -51,6 +51,18 @@ def get_player_direction():
 
 # The main hub, the village, this function is for the player to get around.
 def village():
+    if Level == 10:
+        print(
+            "You leave the dungeon with a new weapon, this might be exactly what you need to defeat Cattledoore, 'purrfect whisker of eternal nightmares and damnation jr the third'!"
+        )
+        time.sleep(5)
+        Player.inventory.append(
+            "purrfect whisker of eternal nightmares and damnation jr the third"
+        )
+        print(
+            "You now are wielding the 'purrfect whisker of eternal nightmares and damnation jr the third', and can enter the castle."
+        )
+        time.sleep(4)
     print("You walk into a village close to the castle in the dead of night.")
     time.sleep(1)
     print("To the West there is a shop called 'Yakobs Armoury'.")
@@ -167,9 +179,14 @@ def RunGame():
         print(f"You enter level {Level}")
         time.sleep(1)
         while enemy_health > 0:
-            player_damage = random.randint(30, 60)
+            player_damage = random.randint(30 + (Level * 1.2), 60 + (Level * 1.2))
+
             if len(player.inventory) > 0:
-                player_damage = player_damage + 50
+                if Level == 1:
+                    player_damage = player_damage + 50
+                elif Level > 1:
+                    player_damage = player_damage + (50 * (Level * 0.6))
+
                 print(
                     f"You attack, dealing {player_damage} damage, using {player.inventory[0]}"
                 )
