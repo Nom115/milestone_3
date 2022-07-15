@@ -213,8 +213,14 @@ def RunGame():
         time.sleep(3)
 
     def the_castle():
-        print("You walk into the castle")
-        player.health = 0
+        if (
+            "purrfect whisker of eternal nightmares and damnation jr the third"
+            not in player.inventory
+        ):
+            print(
+                "You walk into the castle courtyard, and instantly get incinerated by Cattledoore's strong magic!"
+            )
+            player.health = 0
 
     print(weapon_generator())
 
@@ -238,7 +244,8 @@ def RunGame():
         elif village_choice == "The castle":
             the_castle()
 
-    print("You Died")
+    print("You Died!")
+    print(f"Score: {Level}")
 
 
 if __name__ == "__main__":
