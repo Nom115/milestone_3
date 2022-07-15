@@ -156,8 +156,14 @@ def RunGame():
         level = 0
         print("You walk into the dungeon")
         enemy_health = 100
+        if level > 1:
+            enemy_health = enemy_health * level
+        print(f"You enter level {level}")
         while enemy_health > 0:
-            pass
+            player_damage = random.randint(30, 60)
+            if len(player.inventory) > 0:
+                player_damage = player_damage + 50
+            print("You attack")
 
     def the_castle():
         print("You walk into the castle")
