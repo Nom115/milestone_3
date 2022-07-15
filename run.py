@@ -213,13 +213,34 @@ def RunGame():
         time.sleep(3)
 
     def the_castle():
-        if (
-            "purrfect whisker of eternal nightmares and damnation jr the third"
-            not in player.inventory
-        ):
+        if "purrfect whisker of eternal nightmares and damnation jr the third" not in player.inventory:
             print(
                 "You walk into the castle courtyard, and instantly get incinerated by Cattledoore's strong magic!"
             )
+            player.health = 0
+        else:
+            cattledoore_health = 30000
+            while cattledoore_health > 0:
+                if len(player.inventory) > 2:
+                    player_damage = random.randint(50*Level, 55*Level)
+                else:
+                    player_damage = random.randint(25*Level, 30*Level)
+                print(f"You attack Cattledoore, and deal {player_damage}")
+                time.sleep(2)
+                cattledoore_health = cattledoore_health - player_damage
+                cattledoore_damage = random.randint(0,10)
+                if cattledoore_damage == 3:
+                    print("Cattledoore does a super attack, dealing 150 damage.")
+                    cattledoore_damage = 150
+                player.health = player.health - cattledoore_damage
+                print(f"You are hit for {cattledoore_damage} and have {player.health} hp left")
+            print("Cattledoore is killed and you take back the crown. The kingdom is saved!")
+            time.sleep(5)
+            print("Or so you think")
+            time.sleep(1)
+            print("...")
+            time.sleep(3)
+            print("Cattledoore awakens and uses the souls of your people to instantly kill you")
             player.health = 0
 
     print(weapon_generator())
