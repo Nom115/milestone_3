@@ -68,10 +68,8 @@ def village():
     time.sleep(1)
     print("To the West there is a shop called 'Yakobs Armoury'.")
     time.sleep(1)
-    print("To the North there is a tavern with many revellers and patrons.")
-    time.sleep(1)
     print(
-        "To the East there is a sign, with many warning written in blood. The sign says,\n 'BEWARE\n The Dungeon of Neverending Torment\n This way'"
+        "To the East there is a sign, with many warnings written in blood. The sign says,\n 'BEWARE\n The Dungeon of Neverending Torment\n This way'"
     )
     time.sleep(4)
     print(

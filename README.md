@@ -1,31 +1,87 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Dungeons and Kittens
 
-Welcome USER_NAME,
+Dungeons and Kittens is aimed at RPG/Dungeon Crawler lovers. In this text based adventure you play as a kitten who has been overthrown and kicked out of their kingdom. You have the ability to check out the armoury and regain strength, or get straight into the dungeon to level up. The final boss is in the castle. This game is very grindy, and can be very addictive.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Features 
+The main features are the neverending dungeon and bossfight within the castle.
+### Existing Features
 
-## Reminders
+- __The Nav Bar__
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+  - Stuck to the top of each page, the nav bar allows for easy navigation across the site, with very little trouble. Hamburger menu included for mobile, and is fully responsive, with hover over text.
 
-## Creating the Heroku app
+![Nav Bar](assets/imgs/nav_bar.png)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+- __The Quiz__
 
-1. `heroku/python`
-2. `heroku/nodejs`
+  - This section allows the user to play an interactive quiz to find out which TV they need.
+  - By clicking on the answers, the user's input is recorded and stored in an array, to give a more accurate TV recommendation. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+![Quiz](assets/imgs/the_quiz.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- __The Interactive Table__
 
-Connect your GitHub repository and deploy as normal.
+  - The interactive table includes the manufacturer, the Model number, the RRP and an Amazon link. 
+  - Using Tabulator, the entire table is completely interactive and sortable.
 
-## Constraints
+![Table](assets/imgs/table.png)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- __OLED vs QLED__
 
------
-Happy coding!
+  - The OLED vs QLED page displays both, OLED and QLED, and gives the pros and cons in the form of cards on the screen. The user can scroll forward and back between the cards and read as they go along. 
+
+![Cards](assets/imgs/cards.png)
+
+Additional features that I would implement would be:
+ - 2022 models
+ - Better accuracy of model recommendation
+ - More questions on quiz
+
+### Features Left to Implement
+
+- TV newsfeed displaying all new advancements in the TV industry, that is live updating from Twitter, showing anything from Samsung Displays, or LG Displays etc.
+
+## Testing 
+
+In regards to testing, having multiple people complete the quiz, and then further trying every combination myself, allowed to validate the quiz as BUGFREE. The table has also been thoroughly tested with the only problem so far being resizing of the columns with no way to reset other than a page refresh (F5). In regards to the OLED vs QLED cards, the testing was done mainly with console.log() functions, detailing exactly what the site is doing so as to know where problems may have arised.
+
+
+### Validator Testing 
+
+- HTML
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=http%3A%2F%2F34.73.3.134%2Fwhat-tv-do-you-need%2F)
+- CSS
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F34.73.3.134%2Fwhat-tv-do-you-need%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JavaScript
+    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+      - The following metrics were returned: 
+      - There are 17 functions in this file.
+      - Function with the largest signature take 1 arguments, while the median is 0.
+      - Largest function has 23 statements in it, while the median is 4.
+      - The most complex function has a cyclomatic complexity value of 9 while the median is 4.
+
+### Unfixed Bugs
+
+No unfixed bugs.
+
+## Deployment
+
+- The site was deployed to Google Cloud Platform. The steps to deploy are as follows: 
+  - Create a Virtual Machine
+  - Install NGINX on VM
+  - Using Linux command prompt, install and upload files to server, allowing for reading and display of content 
+
+The live link can be found here - http://34.73.3.134/what-tv-do-you-need/index.html
+
+
+## Credits 
+
+### Content 
+
+ - [Tabulator](http://tabulator.info/) - Tabulator allowed for fully featured, interactive JavaScript tables.
+ - [Bootstrap](https://getbootstrap.com/) - Bootstrap allowed for easy styling, and easy responsiveness. 
+
+### Media
+
+ - [QN94A picture](https://www.samsung.com/uk/tvs/qled-tv/qn90a-50-inch-neo-qled-4k-smart-tv-qe50qn90aatxxu/) - Taken from Samsung.com
+ - [LG C1 picture](https://www.lg.com/uk/tvs/lg-oled65c14lb) - Taken from LG.com
