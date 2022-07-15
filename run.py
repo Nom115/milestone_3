@@ -3,6 +3,8 @@ import time
 
 # Player Class
 class Player:
+
+
     def __init__(self, health, stamina, inventory, fur, party):
         self.health = health
         self.stamina = stamina
@@ -177,7 +179,7 @@ def rungame():
         print(f"You enter level {Level}")
         time.sleep(1)
         while enemy_health > 0:
-            player_damage = random.randint(30 + (Level * 1.2), 60 + (Level * 1.2))
+            player_damage = random.randint(30, 60) + Level*1.2
 
             if len(player.inventory) > 0:
                 if Level == 1:
