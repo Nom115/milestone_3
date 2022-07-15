@@ -32,17 +32,16 @@ class Player:
 def get_player_direction():
     direction = {
         "A": "The armoury",
-        "B": "The tavern",
-        "C": "The dungeon",
-        "D": "The castle",
+        "B": "The dungeon",
+        "C": "The castle",
     }
     player_direction = input(
-        "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
+        "Where would you like to go? \n A) The armoury \n B) The dungeon \n C) The Castle\n"
     ).upper()
-    while player_direction not in "ABCD":
+    while player_direction not in "ABC":
         print("Not a valid choice, please select a correct option")
         player_direction = input(
-            "Where would you like to go? \n A) The armoury \n B) The tavern \n C) The dungeon \n D) The Castle\n"
+            "Where would you like to go? \n A) The armoury \n B) The dungeon \n C) The Castle \n"
         ).upper()
     p_chosen_direction = direction[player_direction]
 
@@ -162,8 +161,6 @@ def RunGame():
             print(player.inventory)
             stay = int(input("Would you like to buy anything else? 1) Yes, 2) No\n"))
 
-    def the_tavern():
-        pass
 
     def the_dungeon():
         global Level
@@ -258,8 +255,6 @@ def RunGame():
         village_choice = village()
         if village_choice == "The armoury":
             the_armoury()
-        elif village_choice == "The tavern":
-            the_tavern()
         elif village_choice == "The dungeon":
             the_dungeon()
         elif village_choice == "The castle":
