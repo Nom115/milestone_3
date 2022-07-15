@@ -52,18 +52,6 @@ def get_player_direction():
 
 # The main hub, the village, this function is for the player to get around.
 def village():
-    if Level == 10:
-        print(
-            "You leave the dungeon with a new weapon, this might be exactly what you need to defeat Cattledoore, 'purrfect whisker of eternal nightmares and damnation jr the third'!"
-        )
-        time.sleep(5)
-        Player.inventory.append(
-            "purrfect whisker of eternal nightmares and damnation jr the third"
-        )
-        print(
-            "You now are wielding the 'purrfect whisker of eternal nightmares and damnation jr the third', and can enter the castle."
-        )
-        time.sleep(4)
     print("You walk into a village close to the castle in the dead of night.")
     time.sleep(1)
     print("To the West there is a shop called 'Yakobs Armoury'.")
@@ -123,7 +111,7 @@ def weapon_generator():
     return weapon
 
 
-Level = 0
+Level = 1
 # Begin the adventure
 def rungame():
     player = Player(
@@ -202,7 +190,13 @@ def rungame():
             if enemy_health > 0:
                 print(f"The enemy attacks, and deals {enemy_damage} damage to you")
             time.sleep(2)
+            player.health = player.health - enemy_damage
+            if player.health < 0:
+                print("You run away from the fight, and retreat to the village to heal")
+                break
 
+            print(f"You have {player.health} hp left, and your enemy has {enemy_health} hp left")
+        
         print(
             "You return to the village after a deadly battle, knowing where to go next time to get to the next level of the dungeon"
         )
@@ -213,6 +207,18 @@ def rungame():
             player.health = player.health + (100 * (Level ^1.2))
         print(f"You feel stronger, and your health is now {player.health}")
         time.sleep(3)
+        if Level == 10:
+            print(
+            "You leave the dungeon with a new weapon, this might be exactly what you need to defeat Cattledoore, 'purrfect whisker of eternal nightmares and damnation jr the third'!"
+            )
+            time.sleep(5)
+            player.inventory.append(
+                "purrfect whisker of eternal nightmares and damnation jr the third"
+            )
+            print(
+                "You now are wielding the 'purrfect whisker of eternal nightmares and damnation jr the third', and can enter the castle."
+            )
+            time.sleep(4)
 
     def the_castle():
         if "purrfect whisker of eternal nightmares and damnation jr the third" not in player.inventory:

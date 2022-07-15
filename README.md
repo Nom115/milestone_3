@@ -6,20 +6,17 @@ Dungeons and Kittens is aimed at RPG/Dungeon Crawler lovers. In this text based 
 The main features are the neverending dungeon and bossfight within the castle.
 ### Existing Features
 
-- __The Nav Bar__
+- __The Dungeon of Neverending Torment__
 
-  - Stuck to the top of each page, the nav bar allows for easy navigation across the site, with very little trouble. Hamburger menu included for mobile, and is fully responsive, with hover over text.
+  - The Dungeon of Neverending Torment, this is an endless dungeon inspired by idle games found on mobile devices. This is an infinite way for the player to gain strength and progress the story at level 10 by obtaining the required item.
 
-![Nav Bar](assets/imgs/nav_bar.png)
 
-- __The Quiz__
+- __The armoury__
 
-  - This section allows the user to play an interactive quiz to find out which TV they need.
-  - By clicking on the answers, the user's input is recorded and stored in an array, to give a more accurate TV recommendation. 
+  - The armoury allows the player to "purchase" weapons, each weapon is completely randomized with different names each time, and then when bought added to the player's inventory, using this weapon makes the stronger in the dungeon and the castle.
 
-![Quiz](assets/imgs/the_quiz.png)
 
-- __The Interactive Table__
+- __The Castle__
 
   - The interactive table includes the manufacturer, the Model number, the RRP and an Amazon link. 
   - Using Tabulator, the entire table is completely interactive and sortable.
