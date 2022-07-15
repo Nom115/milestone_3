@@ -208,7 +208,9 @@ def rungame():
         )
         time.sleep(2)
         if Level > 0:
-            player.health = player.health * Level
+            player.health = 100 * Level
+        elif Level > 10:
+            player.health = player.health + (100 * (Level ^1.2))
         print(f"You feel stronger, and your health is now {player.health}")
         time.sleep(3)
 
