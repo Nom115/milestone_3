@@ -183,7 +183,11 @@ def RunGame():
         print(
             "You return to the village after a deadly battle, knowing where to go next time to get to the next level of the dungeon"
         )
-        time.sleep(1)
+        time.sleep(2)
+        if Level > 0:
+            player.health = player.health * Level
+        print(f"You feel stronger, and your health is now {player.health}")
+        time.sleep(3)
 
     def the_castle():
         print("You walk into the castle")
@@ -210,8 +214,6 @@ def RunGame():
             the_dungeon()
         elif village_choice == "The castle":
             the_castle()
-
-        print(player.health)
 
     print("You Died")
 
