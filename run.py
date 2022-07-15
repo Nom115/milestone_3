@@ -112,6 +112,7 @@ def weapon_generator():
     return weapon
 
 
+Level = 0
 # Begin the adventure
 def RunGame():
     player = Player(
@@ -153,12 +154,16 @@ def RunGame():
         pass
 
     def the_dungeon():
-        level = 0
+        global Level
+        Level = Level + 1
+
         print("You walk into the dungeon")
         enemy_health = 100
-        if level > 1:
-            enemy_health = enemy_health * level
-        print(f"You enter level {level}")
+
+        if Level > 1:
+            enemy_health = enemy_health * Level
+        print(f"You enter level {Level}")
+        time.sleep(1)
         while enemy_health > 0:
             player_damage = random.randint(30, 60)
             if len(player.inventory) > 0:
@@ -168,10 +173,17 @@ def RunGame():
                 )
             else:
                 print(f"You attack, dealing {player_damage} damage")
+            time.sleep(2)
             enemy_health = enemy_health - player_damage
             enemy_damage = random.randint(10, 20)
             if enemy_health > 0:
                 print(f"The enemy attacks, and deals {enemy_damage} damage to you")
+            time.sleep(2)
+
+        print(
+            "You return to the village after a deadly battle, knowing where to go next time to get to the next level of the dungeon"
+        )
+        time.sleep(1)
 
     def the_castle():
         print("You walk into the castle")
