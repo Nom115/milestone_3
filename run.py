@@ -162,6 +162,8 @@ def RunGame():
 
         if Level > 1:
             enemy_health = enemy_health * Level
+        if Level > 10:
+            enemy_health = enemy_health * (Level * 1.5)
         print(f"You enter level {Level}")
         time.sleep(1)
         while enemy_health > 0:
@@ -176,6 +178,10 @@ def RunGame():
             time.sleep(2)
             enemy_health = enemy_health - player_damage
             enemy_damage = random.randint(10, 20)
+            if Level > 5:
+                enemy_damage = random.randint(40, 100)
+            elif Level > 10:
+                enemy_damage = random.randint(100, 100 + (Level * 1.5))
             if enemy_health > 0:
                 print(f"The enemy attacks, and deals {enemy_damage} damage to you")
             time.sleep(2)
