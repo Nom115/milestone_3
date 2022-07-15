@@ -163,7 +163,15 @@ def RunGame():
             player_damage = random.randint(30, 60)
             if len(player.inventory) > 0:
                 player_damage = player_damage + 50
-            print("You attack")
+                print(
+                    f"You attack, dealing {player_damage} damage, using {player.inventory[0]}"
+                )
+            else:
+                print(f"You attack, dealing {player_damage} damage")
+            enemy_health = enemy_health - player_damage
+            enemy_damage = random.randint(10, 20)
+            if enemy_health > 0:
+                print(f"The enemy attacks, and deals {enemy_damage} damage to you")
 
     def the_castle():
         print("You walk into the castle")
