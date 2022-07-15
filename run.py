@@ -20,12 +20,12 @@ class Player:
             "C": "Black",
         }
         get_player_fur = input(
-            "What colour is your fur? A)Brown, B) White, C)Black \n"
+            "What colour is your fur?\nA) Brown\nB) White\nC) Black \n"
         ).upper()
         while get_player_fur not in "ABC":
             print("Not a valid choice, please select a correct option")
             get_player_fur = input(
-                "What colour is your fur? A)Brown, B) White, C)Black \n"
+                "What colour is your fur?\nA) Brown\nB) White\nC) Black \n"
             ).upper()
         self.fur = p_fur[get_player_fur]
 
@@ -249,7 +249,7 @@ def rungame():
     player.get_player_fur()
     time.sleep(1)
     print(
-        f"You are a prince, with {player.fur} fur, whose castle who has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
+        f"You are a prince, with {player.fur} fur, whose castle has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
     )
     time.sleep(6)
 
