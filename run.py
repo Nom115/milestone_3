@@ -95,7 +95,7 @@ def weapon_generator():
         10: "Starlight",
     }
 
-    type = {
+    type_of_wep = {
         1: "Sword",
         2: "Axe",
         3: "Hammer",
@@ -119,13 +119,13 @@ def weapon_generator():
     prefix_choice = random.randint(1, 10)
     type_choice = random.randint(1, 5)
     suffix_choice = random.randint(1, 10)
-    weapon = f"{prefix[prefix_choice]}, {type[type_choice]} {suffix[suffix_choice]}"
+    weapon = f"{prefix[prefix_choice]}, {type_of_wep[type_choice]} {suffix[suffix_choice]}"
     return weapon
 
 
 Level = 0
 # Begin the adventure
-def RunGame():
+def rungame():
     player = Player(
         100,
         10,
@@ -147,17 +147,18 @@ def RunGame():
                     f"Which would you like, 1) {wares[0]}, 2) {wares[1]}, 3) {wares[2]}, 4) Nothing?\n"
                 )
             )
+            soldout = "Sold Out"
             if purchase == 1:
                 player.inventory.append(wares[0])
-                wares[0] = "Sold Out"
+                wares[0] = soldout
             elif purchase == 2:
                 player.inventory.append(wares[1])
-                wares[1] = "Sold Out"
+                wares[1] = soldout
             elif purchase == 3:
                 player.inventory.append(wares[2])
-                wares[2] = "Sold Out"
+                wares[2] = soldout
             elif purchase == 4:
-                pass
+                break
             print(player.inventory)
             stay = int(input("Would you like to buy anything else? 1) Yes, 2) No\n"))
 
@@ -240,16 +241,13 @@ def RunGame():
             print("Cattledoore awakens and uses the souls of your people to instantly kill you")
             player.health = 0
 
-    print(weapon_generator())
 
     player.get_player_fur()
-    print(player.fur)
     time.sleep(1)
-    print(player.inventory)
     print(
         f"You are a prince, with {player.fur} fur, whose castle who has been taken over by the most evil, powerful cat-zard, Cattledoore. \n Now, Cattledoore is in possesion of all the catnip in Catnipdom, so you must go on a quest, to retake your kingdom and help your people, by finding the 'purrfect whisker of eternal nightmares and damnation jr the third'."
     )
-    time.sleep(0)
+    time.sleep(6)
 
     while player.health > 0:
         village_choice = village()
@@ -265,4 +263,4 @@ def RunGame():
 
 
 if __name__ == "__main__":
-    RunGame()
+    rungame()
